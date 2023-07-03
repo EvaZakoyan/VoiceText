@@ -1,0 +1,7 @@
+starter2.py
+starter.py
+.idea/*
+config.yml
+bot/__pycache__/
+commands/__pycache__/
+
