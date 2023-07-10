@@ -105,37 +105,7 @@ def voice_message(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=f"Word Error Rate (WER): {wer_result}")
 
     
-jsonfile = "/home/eva/Desktop/Telegram_bot/bot/text_compare.json"
+
 voice_message_handler = MessageHandler(Filters.voice, voice_message)
 
 
-# WER calculating eith editdistance package
-
-# def calculate_wer(reference, hypothesis):
-#     reference = reference.split()
-#     hypothesis = hypothesis.split()
-#     wer = editdistance.eval(reference, hypothesis) / len(reference)
-#     return wer
-
-
-# WER calculating using jwer
-# def calculate_wer(transcription, reference):
-#     return wer(reference, transcription)
-
-# def update_json_file(json_file, transcription, original_text):
-#     with open(json_file, 'r') as file:
-#         data = json.load(file)
-
-#     data['transcription'] = transcription
-#     data['wer'] = calculate_wer(transcription, original_text)
-
-#     with open(json_file, 'w') as file:
-#         json.dump(data, file)
-
-# def load_json_file(json_file):
-#     with open(json_file, 'r') as file:
-#         data = json.load(file)
-#     return data['original_text']
-
-# def voice_message(json_file, transcription):
-#     original_text = load_json_file(json_file)
