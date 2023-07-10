@@ -7,3 +7,5 @@ commands/__pycache__/
 voice.wav
 voice.ogg
 voice_mono.wav
+text_compare.json
+constants.py
