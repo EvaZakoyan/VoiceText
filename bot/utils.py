@@ -2,7 +2,7 @@ import subprocess
 import os
 from google.cloud import speech
 from telegram.ext import MessageHandler, Filters, Updater
-from bot.constants import GOOGLE_APPLICATION_CREDENTIALS
+from bot.constants import GOOGLE_APPLICATION_CREDENTIALS , JSON_FILE_PATH
 import json
 from jiwer import wer
 
@@ -99,8 +99,8 @@ def voice_message(update, context):
     context.bot.send_message(
         chat_id=update.effective_chat.id, text=transcription)
 
-    update_jsonfile(jsonfile, transcription)
-    original_text = load_jsonfile(jsonfile)
+    update_jsonfile(JSON_FILE_PATH, transcription)
+    original_text = load_jsonfile(JSON_FILE_PATH)
     wer_result = calculate_wer(transcription, original_text)
     context.bot.send_message(chat_id=update.effective_chat.id, text=f"Word Error Rate (WER): {wer_result}")
 
