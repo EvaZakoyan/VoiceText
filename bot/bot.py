@@ -17,6 +17,4 @@ def start_bot():
     
     return updater
 
-    # updater.start_polling()
-    # updater.idle()
 
